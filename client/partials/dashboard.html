@@ -1,0 +1,24 @@
+<div ng-controller='sessionController'>
+	Welcome, {{cur_user.name[0].toUpperCase() + cur_user.name.slice(1) }}! | <a href="/logout">logout</a>
+</div>
+
+
+
+
+<div ng-controller='friendController'>
+
+	<table border="1">
+		<tr>
+			<th>name</th>
+			<th>show</th>
+			<th>delete</th>
+			<th>edit</th>
+		</tr>
+		<tr ng-repeat='friend in friends'>
+			<td>{{friend.name}}</td>
+			<td><a href="#/show/{{friend._id}}">Show</a></td>
+			<td><button ng-click='delete(friend._id)'> Delete!</button></td>
+			<td><a href="#/edit/{{friend._id}}">Edit</a></td>
+		</tr>
+	</table>
+</div>
